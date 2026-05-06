@@ -293,6 +293,13 @@ def attachment(name):
 # Not-null constraint on Unit_ID
 vlyr.setFieldConstraint(_idx("Unit_ID"), QgsFieldConstraints.ConstraintNotNull)
 
+# Unit_ID default — generates a timestamped placeholder for new child features
+# so the field is never blank. Inspector should rename it to a proper ID.
+vlyr.setDefaultValueDefinition(
+    _idx("Unit_ID"),
+    QgsDefaultValue("concat('CHILD_', format_date(now(), 'yyyyMMddHHmmss'))", True)
+)
+
 # Child_Unit_ID — Value Relation back to Unit_ID in this layer.
 # Filter excludes features that are already children (prevents circular refs).
 # Dropdown shows Unit_Description so inspectors can identify the parent by name.
@@ -307,6 +314,13 @@ vlyr.setEditorWidgetSetup(_idx("Child_Unit_ID"), QgsEditorWidgetSetup("ValueRela
     "OrderByValue":     True,
     "UseCompleter":     True,
 }))
+
+# Child_Unit_ID default — when creating via the relation tab, pulls the parent's
+# Unit_ID automatically. Belt-and-braces alongside the relation field pair.
+vlyr.setDefaultValueDefinition(
+    _idx("Child_Unit_ID"),
+    QgsDefaultValue("current_parent_value('Unit_ID')", True)
+)
 
 # Asset Type dropdown (normalised values)
 value_map("Asset_Type", [
