@@ -77,13 +77,25 @@ print(f"[1/5] Excel: {len(xl_data)} records loaded.")
 
 
 # ── 2. Create output GeoPackage ───────────────────────────────────────────────
-# CRS is defined via WKT read directly from the source PRJ file rather than
-# ImportFromEPSG(7854), because older GDAL/PROJ versions fail silently on that
-# code and write the wrong zone — causing QGIS to place features in SA.
-_PRJ_PATH = os.path.join(BASE_DIR, "RiverwallForValuation",
-                          "Riverwalls_For_InitialRecognition.prj")
-with open(_PRJ_PATH, "r") as _f:
-    _CRS_WKT = _f.read().strip()
+# Canonical WKT1 for EPSG:7854 (GDA2020 / MGA Zone 50).
+# Hardcoded so nothing depends on the local PROJ/EPSG database version.
+# The Central_Meridian=117 is the critical value that distinguishes Zone 50
+# from Zone 54 (141) — OGR sometimes writes the wrong EPSG authority code to
+# the GPKG SRS table, so we patch it via sqlite3 after writing (see below).
+_GDA2020_MGA50_WKT = (
+    'PROJCS["GDA2020 / MGA zone 50",'
+    'GEOGCS["GDA2020",'
+    'DATUM["GDA2020",SPHEROID["GRS 1980",6378137,298.257222101]],'
+    'PRIMEM["Greenwich",0],'
+    'UNIT["degree",0.0174532925199433]],'
+    'PROJECTION["Transverse_Mercator"],'
+    'PARAMETER["latitude_of_origin",0],'
+    'PARAMETER["central_meridian",117],'
+    'PARAMETER["scale_factor",0.9996],'
+    'PARAMETER["false_easting",500000],'
+    'PARAMETER["false_northing",10000000],'
+    'UNIT["metre",1]]'
+)
 
 drv = ogr.GetDriverByName("GPKG")
 if os.path.exists(GPKG_PATH):
@@ -91,7 +103,7 @@ if os.path.exists(GPKG_PATH):
 
 ds_out  = drv.CreateDataSource(GPKG_PATH)
 srs_out = osr.SpatialReference()
-srs_out.ImportFromWkt(_CRS_WKT)
+srs_out.ImportFromWkt(_GDA2020_MGA50_WKT)
 
 out_lyr = ds_out.CreateLayer(LAYER_NAME, srs_out, ogr.wkbMultiLineString)
 
@@ -177,7 +189,31 @@ for shp_feat in shp_lyr:
 ds_shp = None
 ds_out = None  # flush and close
 
-print(f"[3/5] {written} features written to GeoPackage.")
+# Patch the GPKG's internal SRS table so QGIS reads EPSG:7854 directly.
+# OGR sometimes writes the wrong organisation_coordsys_id (e.g. 28354 / Zone 54)
+# because its local PROJ database doesn't recognise EPSG:7854. Fixing this row
+# means QGIS sees 'EPSG' + 7854 and uses the correct zone without any guessing.
+import sqlite3 as _sqlite3
+_conn = _sqlite3.connect(GPKG_PATH)
+_cur  = _conn.cursor()
+_cur.execute(
+    "SELECT srs_id FROM gpkg_geometry_columns WHERE table_name=?", (LAYER_NAME,)
+)
+_srs_row = _cur.fetchone()
+if _srs_row:
+    _cur.execute(
+        """UPDATE gpkg_spatial_ref_sys
+           SET srs_name                = 'GDA2020 / MGA zone 50',
+               organization            = 'EPSG',
+               organization_coordsys_id = 7854,
+               definition              = ?
+           WHERE srs_id = ?""",
+        (_GDA2020_MGA50_WKT, _srs_row[0]),
+    )
+    _conn.commit()
+_conn.close()
+
+print(f"[3/5] {written} features written — GPKG SRS table forced to EPSG:7854.")
 if unmatched:
     print(f"       WARNING — no Excel match for: {unmatched}")
 
@@ -186,12 +222,13 @@ if unmatched:
 vlyr = QgsVectorLayer(f"{GPKG_PATH}|layername={LAYER_NAME}", LAYER_NAME, "ogr")
 assert vlyr.isValid(), f"Layer failed to load — check: {GPKG_PATH}"
 
-# Force CRS to EPSG:7854 regardless of what QGIS auto-detected from the GPKG.
-# This prevents the zone-mismatch that placed features in SA on older QGIS builds.
+# Force CRS — try EPSG:7854 first; fall back to hardcoded WKT if that EPSG
+# code isn't in the local PROJ database. Either way, central_meridian=117
+# is embedded in the WKT so Zone 50 is unambiguous.
 _qgs_crs = QgsCoordinateReferenceSystem("EPSG:7854")
 if not _qgs_crs.isValid():
     _qgs_crs = QgsCoordinateReferenceSystem()
-    _qgs_crs.createFromWkt(_CRS_WKT)
+    _qgs_crs.createFromWkt(_GDA2020_MGA50_WKT)
 vlyr.setCrs(_qgs_crs)
 
 # Field aliases (display labels in attribute form)
@@ -307,7 +344,7 @@ QgsProject.instance().relationManager().addRelation(rel)
 
 
 # ── 7. Save project ───────────────────────────────────────────────────────────
-QgsProject.instance().setCrs(_qgs_crs)
+QgsProject.instance().setCrs(_qgs_crs)   # EPSG:7854 / GDA2020 MGA Zone 50
 QgsProject.instance().setFileName(QGS_PATH)
 
 # Reset canvas rotation to 0 (north-up) and zoom to the layer extent.
