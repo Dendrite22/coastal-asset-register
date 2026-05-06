@@ -203,9 +203,9 @@ _srs_row = _cur.fetchone()
 if _srs_row:
     _cur.execute(
         """UPDATE gpkg_spatial_ref_sys
-           SET srs_name                = 'GDA2020 / MGA zone 50',
+           SET srs_name                = 'GDA94 / MGA zone 50',
                organization            = 'EPSG',
-               organization_coordsys_id = 7854,
+               organization_coordsys_id = 28350,
                definition              = ?
            WHERE srs_id = ?""",
         (_GDA2020_MGA50_WKT, _srs_row[0]),
@@ -222,13 +222,14 @@ if unmatched:
 vlyr = QgsVectorLayer(f"{GPKG_PATH}|layername={LAYER_NAME}", LAYER_NAME, "ogr")
 assert vlyr.isValid(), f"Layer failed to load — check: {GPKG_PATH}"
 
-# Force CRS — try EPSG:7854 first; fall back to hardcoded WKT if that EPSG
-# code isn't in the local PROJ database. Either way, central_meridian=117
-# is embedded in the WKT so Zone 50 is unambiguous.
+# Force CRS to Zone 50.
+# EPSG:28350 (GDA94/MGA Zone 50) is in every QGIS PROJ database and is used
+# as the primary choice — same zone and coordinates as GDA2020, ~1.8m datum
+# shift which is negligible for asset management.
+# EPSG:7854 (GDA2020) is preferred if available; 28350 is the reliable fallback.
 _qgs_crs = QgsCoordinateReferenceSystem("EPSG:7854")
 if not _qgs_crs.isValid():
-    _qgs_crs = QgsCoordinateReferenceSystem()
-    _qgs_crs.createFromWkt(_GDA2020_MGA50_WKT)
+    _qgs_crs = QgsCoordinateReferenceSystem("EPSG:28350")
 vlyr.setCrs(_qgs_crs)
 
 # Field aliases (display labels in attribute form)
@@ -344,7 +345,7 @@ QgsProject.instance().relationManager().addRelation(rel)
 
 
 # ── 7. Save project ───────────────────────────────────────────────────────────
-QgsProject.instance().setCrs(_qgs_crs)   # EPSG:7854 / GDA2020 MGA Zone 50
+QgsProject.instance().setCrs(_qgs_crs)   # EPSG:28350 or 7854 / MGA Zone 50
 QgsProject.instance().setFileName(QGS_PATH)
 
 # Reset canvas rotation to 0 (north-up) and zoom to the layer extent.
