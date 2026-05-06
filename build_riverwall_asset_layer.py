@@ -8,6 +8,8 @@
 #          riverwall_assets.qgs    — QGIS project
 #
 # CRS: GDA2020 / MGA Zone 50 (EPSG:7854) — native projected CRS, metres.
+#      WKT is written directly from the source shapefile PRJ to avoid EPSG
+#      lookup failures on older GDAL builds that misidentify the zone.
 #
 # Child asset workflow (QField):
 #   Open a parent feature form → "Child Assets" tab → tap + to digitise a
@@ -75,13 +77,21 @@ print(f"[1/5] Excel: {len(xl_data)} records loaded.")
 
 
 # ── 2. Create output GeoPackage ───────────────────────────────────────────────
+# CRS is defined via WKT read directly from the source PRJ file rather than
+# ImportFromEPSG(7854), because older GDAL/PROJ versions fail silently on that
+# code and write the wrong zone — causing QGIS to place features in SA.
+_PRJ_PATH = os.path.join(BASE_DIR, "RiverwallForValuation",
+                          "Riverwalls_For_InitialRecognition.prj")
+with open(_PRJ_PATH, "r") as _f:
+    _CRS_WKT = _f.read().strip()
+
 drv = ogr.GetDriverByName("GPKG")
 if os.path.exists(GPKG_PATH):
     drv.DeleteDataSource(GPKG_PATH)
 
 ds_out  = drv.CreateDataSource(GPKG_PATH)
 srs_out = osr.SpatialReference()
-srs_out.ImportFromEPSG(7854)  # GDA2020 / MGA Zone 50
+srs_out.ImportFromWkt(_CRS_WKT)
 
 out_lyr = ds_out.CreateLayer(LAYER_NAME, srs_out, ogr.wkbMultiLineString)
 
@@ -112,7 +122,8 @@ for fld in [
     _s("Photo_1",                 254),
     _s("Photo_2",                 254),
     _s("Photo_3",                 254),
-    _s("Inspection_Notes",        500),   # source Comments — field inspection context
+    _s("CoP_Comments",            500),   # pre-filled from source Comments (CoP records)
+    _s("Inspection_Notes",        500),   # blank — filled by inspector in the field
 ]:
     out_lyr.CreateField(fld)
 
@@ -157,7 +168,8 @@ for shp_feat in shp_lyr:
     feat_out.SetField("Total_Length_m",       length_m)
     feat_out.SetField("Material",             material)
     feat_out.SetField("Asset_Type",           asset_type)
-    feat_out.SetField("Inspection_Notes",     comments)
+    feat_out.SetField("CoP_Comments",         comments)
+    # Inspection_Notes left null — completed by inspector in the field
     # Valuation, condition, and photo fields left null — completed during assessment
     out_lyr.CreateFeature(feat_out)
     written += 1
@@ -173,6 +185,14 @@ if unmatched:
 # ── 4. Load layer into QGIS ───────────────────────────────────────────────────
 vlyr = QgsVectorLayer(f"{GPKG_PATH}|layername={LAYER_NAME}", LAYER_NAME, "ogr")
 assert vlyr.isValid(), f"Layer failed to load — check: {GPKG_PATH}"
+
+# Force CRS to EPSG:7854 regardless of what QGIS auto-detected from the GPKG.
+# This prevents the zone-mismatch that placed features in SA on older QGIS builds.
+_qgs_crs = QgsCoordinateReferenceSystem("EPSG:7854")
+if not _qgs_crs.isValid():
+    _qgs_crs = QgsCoordinateReferenceSystem()
+    _qgs_crs.createFromWkt(_CRS_WKT)
+vlyr.setCrs(_qgs_crs)
 
 # Field aliases (display labels in attribute form)
 ALIASES = {
@@ -197,7 +217,8 @@ ALIASES = {
     "Photo_1":                  "Photo 1",
     "Photo_2":                  "Photo 2",
     "Photo_3":                  "Photo 3",
-    "Inspection_Notes":         "Inspection Notes (source)",
+    "CoP_Comments":             "CoP Comments",
+    "Inspection_Notes":         "Inspection Notes",
 }
 for fname, alias in ALIASES.items():
     idx = vlyr.fields().indexFromName(fname)
@@ -286,8 +307,17 @@ QgsProject.instance().relationManager().addRelation(rel)
 
 
 # ── 7. Save project ───────────────────────────────────────────────────────────
-QgsProject.instance().setCrs(QgsCoordinateReferenceSystem("EPSG:7854"))
+QgsProject.instance().setCrs(_qgs_crs)
 QgsProject.instance().setFileName(QGS_PATH)
+
+# Reset canvas rotation to 0 (north-up) and zoom to the layer extent.
+# Tile imagery resolution degrades badly when the canvas is rotated — keeping
+# rotation at 0 avoids that problem.
+from qgis.utils import iface
+iface.mapCanvas().setRotation(0)
+iface.setActiveLayer(vlyr)
+iface.zoomToActiveLayer()
+
 QgsProject.instance().write()
 
 print("[5/5] Project saved.")
