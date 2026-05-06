@@ -293,11 +293,14 @@ def attachment(name):
 # Not-null constraint on Unit_ID
 vlyr.setFieldConstraint(_idx("Unit_ID"), QgsFieldConstraints.ConstraintNotNull)
 
-# Unit_ID default — generates a timestamped placeholder for new child features
-# so the field is never blank. Inspector should rename it to a proper ID.
+# ── Child feature defaults (applyOnUpdate=False = creation only) ──────────────
+# Unit_ID: parent ID + _C + timestamp → unique child ID, e.g. HeirissonCOPRVW01A_C250514142
 vlyr.setDefaultValueDefinition(
     _idx("Unit_ID"),
-    QgsDefaultValue("concat('CHILD_', format_date(now(), 'yyyyMMddHHmmss'))", True)
+    QgsDefaultValue(
+        "concat(current_parent_value('Unit_ID'), '_C', format_date(now(), 'yyMMddHHmm'))",
+        False
+    )
 )
 
 # Child_Unit_ID — Value Relation back to Unit_ID in this layer.
@@ -315,11 +318,28 @@ vlyr.setEditorWidgetSetup(_idx("Child_Unit_ID"), QgsEditorWidgetSetup("ValueRela
     "UseCompleter":     True,
 }))
 
-# Child_Unit_ID default — when creating via the relation tab, pulls the parent's
-# Unit_ID automatically. Belt-and-braces alongside the relation field pair.
+# Child_Unit_ID: auto-fills with parent's Unit_ID when created from relation tab
 vlyr.setDefaultValueDefinition(
     _idx("Child_Unit_ID"),
-    QgsDefaultValue("current_parent_value('Unit_ID')", True)
+    QgsDefaultValue("current_parent_value('Unit_ID')", False)
+)
+
+# Inherit descriptive fields from parent — inspector can edit after creation
+vlyr.setDefaultValueDefinition(
+    _idx("Unit_Description"),
+    QgsDefaultValue("current_parent_value('Unit_Description')", False)
+)
+vlyr.setDefaultValueDefinition(
+    _idx("Location_Description"),
+    QgsDefaultValue("current_parent_value('Location_Description')", False)
+)
+vlyr.setDefaultValueDefinition(
+    _idx("Material"),
+    QgsDefaultValue("current_parent_value('Material')", False)
+)
+vlyr.setDefaultValueDefinition(
+    _idx("Asset_Type"),
+    QgsDefaultValue("current_parent_value('Asset_Type')", False)
 )
 
 # Asset Type dropdown (normalised values)
