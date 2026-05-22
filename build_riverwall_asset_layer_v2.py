@@ -103,7 +103,7 @@ with open(CSV_PATH, newline='', encoding='utf-8-sig') as f:
             'Unit_ID':                  _text(gpkg_unit_id),
             'Child_Unit_ID':            _text(gpkg_child_unit_id),
             'Location_Description':     _text(row.get('Location_Description')),
-            'LOCATION_Description':     _text(row.get('LOCATION_Description')),
+            'Location_Area':             _text(row.get('LOCATION_Description')),
             'Material':                 _text(row.get('Material')),
             'Asset_Type':               _text(row.get('Asset_Type')),
             'Length_m':                 _real(row.get('Length (m)')),
@@ -164,7 +164,7 @@ for fld in [
     _s("Unit_ID",                 100),   # NOT NULL (enforced by QGIS constraint)
     _s("Child_Unit_ID",           100),   # parent's Unit_ID — null on parent features
     _s("Location_Description",    500),   # long description, e.g. "Riverwall 01 - ..."
-    _s("LOCATION_Description",    254),   # area name, e.g. "Heirisson Island"
+    _s("Location_Area",           254),   # area name, e.g. "Heirisson Island"
     _s("Material",                254),
     _s("Asset_Type",               50),
     _r("Length_m"),
@@ -267,7 +267,7 @@ ALIASES = {
     "Unit_ID":                  "Unit ID *",
     "Child_Unit_ID":            "Child Unit ID (select parent)",
     "Location_Description":     "Location Description",
-    "LOCATION_Description":     "Location Area",
+    "Location_Area":            "Location Area",
     "Material":                 "Material",
     "Asset_Type":               "Asset Type",
     "Length_m":                 "Length (m)",
@@ -359,8 +359,8 @@ vlyr.setDefaultValueDefinition(
     QgsDefaultValue("current_parent_value('Location_Description')", False)
 )
 vlyr.setDefaultValueDefinition(
-    _idx("LOCATION_Description"),
-    QgsDefaultValue("current_parent_value('LOCATION_Description')", False)
+    _idx("Location_Area"),
+    QgsDefaultValue("current_parent_value('Location_Area')", False)
 )
 vlyr.setDefaultValueDefinition(
     _idx("Material"),
