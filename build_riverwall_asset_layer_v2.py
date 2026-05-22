@@ -145,6 +145,9 @@ _GDA2020_MGA50_WKT = (
 )
 
 drv = ogr.GetDriverByName("GPKG")
+# Release any OGR handles left open by a previous failed run in this console session.
+ds_out = None
+ds_src = None
 if os.path.exists(OUT_GPKG):
     try:
         os.remove(OUT_GPKG)
@@ -262,9 +265,8 @@ if no_geom:
 vlyr = QgsVectorLayer(f"{OUT_GPKG}|layername={LAYER_NAME}", LAYER_NAME, "ogr")
 assert vlyr.isValid(), f"Layer failed to load — check: {OUT_GPKG}"
 
-_qgs_crs = QgsCoordinateReferenceSystem("EPSG:7854")
-if not _qgs_crs.isValid():
-    _qgs_crs = QgsCoordinateReferenceSystem("EPSG:28350")
+# EPSG:28350 = GDA94 / MGA Zone 50. Use this, not EPSG:7854 (= GDA2020 Zone 54 — wrong zone).
+_qgs_crs = QgsCoordinateReferenceSystem("EPSG:28350")
 vlyr.setCrs(_qgs_crs)
 
 # Field aliases (display labels in attribute form)
@@ -422,7 +424,7 @@ print()
 print(f"  Layer   : {LAYER_NAME}  ({written} features)")
 print(f"  GPKG    : {OUT_GPKG}")
 print(f"  Project : {QGS_PATH}")
-print(f"  CRS     : GDA2020 / MGA Zone 50 (EPSG:7854 / fallback EPSG:28350)")
+print(f"  CRS     : GDA94 / MGA Zone 50 (EPSG:28350)")
 print()
 print("Schema: 24 attribute fields — all sourced from riverwall_assets_attribute_update.csv")
 print("Geometry: preserved exactly from V2 (Final)/riverwall_assets/riverwall_assets.gpkg")
