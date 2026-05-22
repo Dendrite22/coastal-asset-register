@@ -1,2 +1,8 @@
 *.qgs~
 __pycache__/
+# Field photos — operational data, not version controlled
+files/
+DCIM/
+Untitled-*.py
+# Nested git repo inside V2 (Final) — track files directly instead
+V2 (Final)/riverwall_assets/.git/

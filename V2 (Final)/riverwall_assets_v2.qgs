@@ -1,0 +1,1044 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis saveDateTime="2026-05-22T18:45:06" saveUserFull="Damian Ferguson" saveUser="Damia" projectname="" version="3.44.9-Solothurn">
+  <homePath path=""/>
+  <title></title>
+  <transaction mode="Disabled"/>
+  <projectFlags set=""/>
+  <projectCrs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>PROJCRS["GDA94 / MGA zone 50",BASEGEOGCRS["GDA94",DATUM["Geocentric Datum of Australia 1994",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4283]],CONVERSION["Map Grid of Australia zone 50",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",117,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["Australia - onshore and offshore between 114°E and 120°E."],BBOX[-38.53,114,-12.06,120.01]],ID["EPSG",28350]]</wkt>
+      <proj4>+proj=utm +zone=50 +south +ellps=GRS80 +units=m +no_defs</proj4>
+      <srsid>2444</srsid>
+      <srid>28350</srid>
+      <authid>EPSG:28350</authid>
+      <description>GDA94 / MGA zone 50</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </projectCrs>
+  <verticalCrs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt></wkt>
+      <proj4></proj4>
+      <srsid>0</srsid>
+      <srid>0</srid>
+      <authid></authid>
+      <description></description>
+      <projectionacronym></projectionacronym>
+      <ellipsoidacronym></ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </verticalCrs>
+  <elevation-shading-renderer hillshading-is-multidirectional="0" combined-method="0" edl-is-active="1" light-altitude="45" light-azimuth="315" is-active="0" edl-strength="1000" edl-distance="0.5" edl-distance-unit="0" hillshading-is-active="0" hillshading-z-factor="1"/>
+  <layer-tree-group>
+    <customproperties>
+      <Option/>
+    </customproperties>
+    <layer-tree-layer providerKey="ogr" checked="Qt::Checked" legend_split_behavior="0" name="Riverwall_Assets" legend_exp="" patch_size="-1,-1" source="./riverwall_assets_v2.gpkg|layername=Riverwall_Assets" expanded="1" id="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523">
+      <customproperties>
+        <Option/>
+      </customproperties>
+    </layer-tree-layer>
+    <custom-order enabled="0">
+      <item>Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523</item>
+    </custom-order>
+  </layer-tree-group>
+  <snapping-settings self-snapping="0" enabled="0" mode="2" maxScale="0" unit="1" minScale="0" scaleDependencyMode="0" type="1" tolerance="12" intersection-snapping="0">
+    <individual-layer-settings>
+      <layer-setting enabled="0" maxScale="0" units="1" minScale="0" type="1" tolerance="12" id="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523"/>
+    </individual-layer-settings>
+  </snapping-settings>
+  <relations>
+    <relation strength="Association" referencedLayer="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523" name="Child Assets" referencingLayer="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523" id="riverwall_child_parent">
+      <fieldRef referencedField="Unit_ID" referencingField="Child_Unit_ID"/>
+    </relation>
+  </relations>
+  <polymorphicRelations/>
+  <mapcanvas annotationsVisible="1" name="theMapCanvas">
+    <units>meters</units>
+    <extent>
+      <xmin>388864.95402000000467524</xmin>
+      <ymin>6461798.97646749950945377</ymin>
+      <xmax>395050.35617999901296571</xmax>
+      <ymax>6464773.5480324998497963</ymax>
+    </extent>
+    <rotation>0</rotation>
+    <destinationsrs>
+      <spatialrefsys nativeFormat="Wkt">
+        <wkt>PROJCRS["GDA94 / MGA zone 50",BASEGEOGCRS["GDA94",DATUM["Geocentric Datum of Australia 1994",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4283]],CONVERSION["Map Grid of Australia zone 50",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",117,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["Australia - onshore and offshore between 114°E and 120°E."],BBOX[-38.53,114,-12.06,120.01]],ID["EPSG",28350]]</wkt>
+        <proj4>+proj=utm +zone=50 +south +ellps=GRS80 +units=m +no_defs</proj4>
+        <srsid>2444</srsid>
+        <srid>28350</srid>
+        <authid>EPSG:28350</authid>
+        <description>GDA94 / MGA zone 50</description>
+        <projectionacronym>utm</projectionacronym>
+        <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </destinationsrs>
+    <rendermaptile>0</rendermaptile>
+    <expressionContextScope/>
+  </mapcanvas>
+  <projectModels/>
+  <legend updateDrawingOrder="true">
+    <legendlayer open="true" checked="Qt::Checked" name="Riverwall_Assets" showFeatureCount="0" drawingOrder="-1">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" visible="1" layerid="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523"/>
+      </filegroup>
+    </legendlayer>
+  </legend>
+  <mapViewDocks/>
+  <mapcanvas annotationsVisible="1" name="mAreaCanvas">
+    <units>degrees</units>
+    <extent>
+      <xmin>179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368</xmin>
+      <ymin>179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368</ymin>
+      <xmax>-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368</xmax>
+      <ymax>-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368</ymax>
+    </extent>
+    <rotation>0</rotation>
+    <destinationsrs>
+      <spatialrefsys nativeFormat="Wkt">
+        <wkt>GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]</wkt>
+        <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+        <srsid>3452</srsid>
+        <srid>4326</srid>
+        <authid>EPSG:4326</authid>
+        <description>WGS 84</description>
+        <projectionacronym>longlat</projectionacronym>
+        <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+        <geographicflag>true</geographicflag>
+      </spatialrefsys>
+    </destinationsrs>
+    <rendermaptile>0</rendermaptile>
+    <expressionContextScope/>
+  </mapcanvas>
+  <main-annotation-layer maxScale="0" autoRefreshTime="0" refreshOnNotifyMessage="" autoRefreshMode="Disabled" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0" minScale="1e+08" refreshOnNotifyEnabled="0" legendPlaceholderImage="" type="annotation">
+    <id>Annotations_75082a66_100d_4455_b3f9_e0829cf783ec</id>
+    <datasource></datasource>
+    <layername>Annotations</layername>
+    <srs>
+      <spatialrefsys nativeFormat="Wkt">
+        <wkt>PROJCRS["GDA94 / MGA zone 50",BASEGEOGCRS["GDA94",DATUM["Geocentric Datum of Australia 1994",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4283]],CONVERSION["Map Grid of Australia zone 50",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",117,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["Australia - onshore and offshore between 114°E and 120°E."],BBOX[-38.53,114,-12.06,120.01]],ID["EPSG",28350]]</wkt>
+        <proj4>+proj=utm +zone=50 +south +ellps=GRS80 +units=m +no_defs</proj4>
+        <srsid>2444</srsid>
+        <srid>28350</srid>
+        <authid>EPSG:28350</authid>
+        <description>GDA94 / MGA zone 50</description>
+        <projectionacronym>utm</projectionacronym>
+        <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </srs>
+    <resourceMetadata>
+      <identifier></identifier>
+      <parentidentifier></parentidentifier>
+      <language></language>
+      <type></type>
+      <title></title>
+      <abstract></abstract>
+      <links/>
+      <dates/>
+      <fees></fees>
+      <encoding></encoding>
+      <crs>
+        <spatialrefsys nativeFormat="Wkt">
+          <wkt></wkt>
+          <proj4></proj4>
+          <srsid>0</srsid>
+          <srid>0</srid>
+          <authid></authid>
+          <description></description>
+          <projectionacronym></projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </crs>
+      <extent/>
+    </resourceMetadata>
+    <items/>
+    <flags>
+      <Identifiable>1</Identifiable>
+      <Removable>1</Removable>
+      <Searchable>1</Searchable>
+      <Private>0</Private>
+    </flags>
+    <customproperties>
+      <Option/>
+    </customproperties>
+    <layerOpacity>1</layerOpacity>
+    <blendMode>0</blendMode>
+    <paintEffect/>
+  </main-annotation-layer>
+  <projectlayers>
+    <maplayer refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" autoRefreshMode="Disabled" legendPlaceholderImage="" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="1" simplifyDrawingTol="1" readOnly="0" simplifyLocal="1" minScale="100000000" geometry="Line" styleCategories="AllStyleCategories" simplifyMaxScale="1" maxScale="0" labelsEnabled="0" wkbType="MultiLineString" simplifyAlgorithm="0" autoRefreshTime="0" type="vector" symbologyReferenceScale="-1">
+      <extent>
+        <xmin>389012.22550000000046566</xmin>
+        <ymin>6461869.79959999956190586</ymin>
+        <xmax>394903.08469999901717529</xmax>
+        <ymax>6464702.72489999979734421</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>115.82534173361966623</xmin>
+        <ymin>-31.97432613347697838</ymin>
+        <xmax>115.88798634911604779</xmax>
+        <ymax>-31.94821160974635532</ymax>
+      </wgs84extent>
+      <id>Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523</id>
+      <datasource>./riverwall_assets_v2.gpkg|layername=Riverwall_Assets</datasource>
+      <layername>Riverwall_Assets</layername>
+      <srs>
+        <spatialrefsys nativeFormat="Wkt">
+          <wkt>PROJCRS["GDA94 / MGA zone 50",BASEGEOGCRS["GDA94",DATUM["Geocentric Datum of Australia 1994",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4283]],CONVERSION["Map Grid of Australia zone 50",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",117,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["Australia - onshore and offshore between 114°E and 120°E."],BBOX[-38.53,114,-12.06,120.01]],ID["EPSG",28350]]</wkt>
+          <proj4>+proj=utm +zone=50 +south +ellps=GRS80 +units=m +no_defs</proj4>
+          <srsid>2444</srsid>
+          <srid>28350</srid>
+          <authid>EPSG:28350</authid>
+          <description>GDA94 / MGA zone 50</description>
+          <projectionacronym>utm</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type>dataset</type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <dates/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys nativeFormat="Wkt">
+            <wkt>PROJCRS["GDA2020 / MGA zone 50",BASEGEOGCRS["GDA2020",DATUM["Geocentric Datum of Australia 2020",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",7844]],CONVERSION["Map Grid of Australia zone 50",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",117,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["Australia - onshore and offshore between 114°E and 120°E."],BBOX[-38.53,114,-12.06,120.01]],ID["EPSG",7850]]</wkt>
+            <proj4>+proj=utm +zone=50 +south +ellps=GRS80 +units=m +no_defs</proj4>
+            <srsid>29029</srsid>
+            <srid>7850</srid>
+            <authid>EPSG:7850</authid>
+            <description>GDA2020 / MGA zone 50</description>
+            <projectionacronym>utm</projectionacronym>
+            <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider encoding="UTF-8">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+        <Private>0</Private>
+      </flags>
+      <temporal startExpression="" endExpression="" enabled="0" mode="0" fixedDuration="0" limitMode="0" endField="" accumulate="0" startField="" durationField="" durationUnit="min">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <elevation respectLayerSymbol="1" extrusion="0" showMarkerSymbolInSurfacePlots="0" zscale="1" customToleranceEnabled="1" clamping="Terrain" symbology="Line" zoffset="0" extrusionEnabled="0" binding="Centroid" type="IndividualFeatures">
+        <data-defined-properties>
+          <Option type="Map">
+            <Option name="name" value="" type="QString"/>
+            <Option name="properties"/>
+            <Option name="type" value="collection" type="QString"/>
+          </Option>
+        </data-defined-properties>
+        <profileLineSymbol>
+          <symbol is_animated="0" alpha="1" name="" frame_rate="10" clip_to_extent="1" type="line" force_rhr="0">
+            <data_defined_properties>
+              <Option type="Map">
+                <Option name="name" value="" type="QString"/>
+                <Option name="properties"/>
+                <Option name="type" value="collection" type="QString"/>
+              </Option>
+            </data_defined_properties>
+            <layer class="SimpleLine" enabled="1" locked="0" pass="0" id="{fae3385b-a5c6-4577-ad36-97d297439eb2}">
+              <Option type="Map">
+                <Option name="align_dash_pattern" value="0" type="QString"/>
+                <Option name="capstyle" value="square" type="QString"/>
+                <Option name="customdash" value="5;2" type="QString"/>
+                <Option name="customdash_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="customdash_unit" value="MM" type="QString"/>
+                <Option name="dash_pattern_offset" value="0" type="QString"/>
+                <Option name="dash_pattern_offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="dash_pattern_offset_unit" value="MM" type="QString"/>
+                <Option name="draw_inside_polygon" value="0" type="QString"/>
+                <Option name="joinstyle" value="bevel" type="QString"/>
+                <Option name="line_color" value="164,113,88,255,rgb:0.6431373,0.4431373,0.345098,1" type="QString"/>
+                <Option name="line_style" value="solid" type="QString"/>
+                <Option name="line_width" value="0.6" type="QString"/>
+                <Option name="line_width_unit" value="MM" type="QString"/>
+                <Option name="offset" value="0" type="QString"/>
+                <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="offset_unit" value="MM" type="QString"/>
+                <Option name="ring_filter" value="0" type="QString"/>
+                <Option name="trim_distance_end" value="0" type="QString"/>
+                <Option name="trim_distance_end_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="trim_distance_end_unit" value="MM" type="QString"/>
+                <Option name="trim_distance_start" value="0" type="QString"/>
+                <Option name="trim_distance_start_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="trim_distance_start_unit" value="MM" type="QString"/>
+                <Option name="tweak_dash_pattern_on_corners" value="0" type="QString"/>
+                <Option name="use_custom_dash" value="0" type="QString"/>
+                <Option name="width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+              </Option>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" value="" type="QString"/>
+                  <Option name="properties"/>
+                  <Option name="type" value="collection" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </profileLineSymbol>
+        <profileFillSymbol>
+          <symbol is_animated="0" alpha="1" name="" frame_rate="10" clip_to_extent="1" type="fill" force_rhr="0">
+            <data_defined_properties>
+              <Option type="Map">
+                <Option name="name" value="" type="QString"/>
+                <Option name="properties"/>
+                <Option name="type" value="collection" type="QString"/>
+              </Option>
+            </data_defined_properties>
+            <layer class="SimpleFill" enabled="1" locked="0" pass="0" id="{4c9f8bc0-7cd4-4b5b-9639-476e025b007a}">
+              <Option type="Map">
+                <Option name="border_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="color" value="164,113,88,255,rgb:0.6431373,0.4431373,0.345098,1" type="QString"/>
+                <Option name="joinstyle" value="bevel" type="QString"/>
+                <Option name="offset" value="0,0" type="QString"/>
+                <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="offset_unit" value="MM" type="QString"/>
+                <Option name="outline_color" value="117,81,63,255,rgb:0.4593729,0.3165332,0.2464942,1" type="QString"/>
+                <Option name="outline_style" value="solid" type="QString"/>
+                <Option name="outline_width" value="0.2" type="QString"/>
+                <Option name="outline_width_unit" value="MM" type="QString"/>
+                <Option name="style" value="solid" type="QString"/>
+              </Option>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" value="" type="QString"/>
+                  <Option name="properties"/>
+                  <Option name="type" value="collection" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </profileFillSymbol>
+        <profileMarkerSymbol>
+          <symbol is_animated="0" alpha="1" name="" frame_rate="10" clip_to_extent="1" type="marker" force_rhr="0">
+            <data_defined_properties>
+              <Option type="Map">
+                <Option name="name" value="" type="QString"/>
+                <Option name="properties"/>
+                <Option name="type" value="collection" type="QString"/>
+              </Option>
+            </data_defined_properties>
+            <layer class="SimpleMarker" enabled="1" locked="0" pass="0" id="{3f2d7e08-a563-41a4-ad95-97d671f8a7ae}">
+              <Option type="Map">
+                <Option name="angle" value="0" type="QString"/>
+                <Option name="cap_style" value="square" type="QString"/>
+                <Option name="color" value="164,113,88,255,rgb:0.6431373,0.4431373,0.345098,1" type="QString"/>
+                <Option name="horizontal_anchor_point" value="1" type="QString"/>
+                <Option name="joinstyle" value="bevel" type="QString"/>
+                <Option name="name" value="diamond" type="QString"/>
+                <Option name="offset" value="0,0" type="QString"/>
+                <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="offset_unit" value="MM" type="QString"/>
+                <Option name="outline_color" value="117,81,63,255,rgb:0.4593729,0.3165332,0.2464942,1" type="QString"/>
+                <Option name="outline_style" value="solid" type="QString"/>
+                <Option name="outline_width" value="0.2" type="QString"/>
+                <Option name="outline_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="outline_width_unit" value="MM" type="QString"/>
+                <Option name="scale_method" value="diameter" type="QString"/>
+                <Option name="size" value="3" type="QString"/>
+                <Option name="size_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="size_unit" value="MM" type="QString"/>
+                <Option name="vertical_anchor_point" value="1" type="QString"/>
+              </Option>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" value="" type="QString"/>
+                  <Option name="properties"/>
+                  <Option name="type" value="collection" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </profileMarkerSymbol>
+      </elevation>
+      <renderer-v2 symbollevels="0" enableorderby="0" referencescale="-1" type="singleSymbol" forceraster="0">
+        <symbols>
+          <symbol is_animated="0" alpha="1" name="0" frame_rate="10" clip_to_extent="1" type="line" force_rhr="0">
+            <data_defined_properties>
+              <Option type="Map">
+                <Option name="name" value="" type="QString"/>
+                <Option name="properties"/>
+                <Option name="type" value="collection" type="QString"/>
+              </Option>
+            </data_defined_properties>
+            <layer class="SimpleLine" enabled="1" locked="0" pass="0" id="{dc3a1062-09e9-4606-a910-a764382da937}">
+              <Option type="Map">
+                <Option name="align_dash_pattern" value="0" type="QString"/>
+                <Option name="capstyle" value="square" type="QString"/>
+                <Option name="customdash" value="5;2" type="QString"/>
+                <Option name="customdash_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="customdash_unit" value="MM" type="QString"/>
+                <Option name="dash_pattern_offset" value="0" type="QString"/>
+                <Option name="dash_pattern_offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="dash_pattern_offset_unit" value="MM" type="QString"/>
+                <Option name="draw_inside_polygon" value="0" type="QString"/>
+                <Option name="joinstyle" value="bevel" type="QString"/>
+                <Option name="line_color" value="133,182,111,255,rgb:0.5215686,0.7137255,0.4352941,1" type="QString"/>
+                <Option name="line_style" value="solid" type="QString"/>
+                <Option name="line_width" value="0.26" type="QString"/>
+                <Option name="line_width_unit" value="MM" type="QString"/>
+                <Option name="offset" value="0" type="QString"/>
+                <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="offset_unit" value="MM" type="QString"/>
+                <Option name="ring_filter" value="0" type="QString"/>
+                <Option name="trim_distance_end" value="0" type="QString"/>
+                <Option name="trim_distance_end_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="trim_distance_end_unit" value="MM" type="QString"/>
+                <Option name="trim_distance_start" value="0" type="QString"/>
+                <Option name="trim_distance_start_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="trim_distance_start_unit" value="MM" type="QString"/>
+                <Option name="tweak_dash_pattern_on_corners" value="0" type="QString"/>
+                <Option name="use_custom_dash" value="0" type="QString"/>
+                <Option name="width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+              </Option>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" value="" type="QString"/>
+                  <Option name="properties"/>
+                  <Option name="type" value="collection" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale/>
+        <data-defined-properties>
+          <Option type="Map">
+            <Option name="name" value="" type="QString"/>
+            <Option name="properties"/>
+            <Option name="type" value="collection" type="QString"/>
+          </Option>
+        </data-defined-properties>
+      </renderer-v2>
+      <selection mode="Default">
+        <selectionColor invalid="1"/>
+      </selection>
+      <customproperties>
+        <Option/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks type="StringList">
+          <Option value="" type="QString"/>
+        </activeChecks>
+        <checkConfiguration/>
+      </geometryOptions>
+      <legend showLabelLegend="0" type="default-vector"/>
+      <referencedLayers>
+        <relation strength="Association" referencedLayer="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523" dataSource="./riverwall_assets_v2.gpkg|layername=Riverwall_Assets" providerKey="ogr" name="Child Assets" referencingLayer="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523" layerId="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523" id="riverwall_child_parent" layerName="Riverwall_Assets">
+          <fieldRef referencedField="Unit_ID" referencingField="Child_Unit_ID"/>
+        </relation>
+      </referencedLayers>
+      <referencingLayers>
+        <relation strength="Association" referencedLayer="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523" dataSource="./riverwall_assets_v2.gpkg|layername=Riverwall_Assets" providerKey="ogr" name="Child Assets" referencingLayer="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523" layerId="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523" id="riverwall_child_parent" layerName="Riverwall_Assets">
+          <fieldRef referencedField="Unit_ID" referencingField="Child_Unit_ID"/>
+        </relation>
+      </referencingLayers>
+      <fieldConfiguration>
+        <field name="fid" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Parent_Unit_ID" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Unit_ID" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Child_Unit_ID" configurationFlags="NoFlag">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option name="AllowMulti" value="false" type="bool"/>
+                <Option name="AllowNull" value="true" type="bool"/>
+                <Option name="FilterExpression" value="&quot;Child_Unit_ID&quot; IS NULL OR &quot;Child_Unit_ID&quot; = ''" type="QString"/>
+                <Option name="Key" value="Unit_ID" type="QString"/>
+                <Option name="Layer" value="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523" type="QString"/>
+                <Option name="NofColumns" value="1" type="int"/>
+                <Option name="OrderByValue" value="true" type="bool"/>
+                <Option name="UseCompleter" value="true" type="bool"/>
+                <Option name="Value" value="Location_Description" type="QString"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Location_Description" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Location_Area" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Material" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Asset_Type" configurationFlags="NoFlag">
+          <editWidget type="ValueMap">
+            <config>
+              <Option type="Map">
+                <Option name="map" type="List">
+                  <Option type="Map">
+                    <Option name="Revetment" value="Revetment" type="QString"/>
+                  </Option>
+                  <Option type="Map">
+                    <Option name="Wall" value="Wall" type="QString"/>
+                  </Option>
+                  <Option type="Map">
+                    <Option name="Gabion" value="Gabion" type="QString"/>
+                  </Option>
+                  <Option type="Map">
+                    <Option name="Beach" value="Beach" type="QString"/>
+                  </Option>
+                  <Option type="Map">
+                    <Option name="Soft Measure" value="Soft Measure" type="QString"/>
+                  </Option>
+                  <Option type="Map">
+                    <Option name="Bioengineering" value="Bioengineering" type="QString"/>
+                  </Option>
+                </Option>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Length_m" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Construction_Year" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Replacement_Cost" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Condition_Rating" configurationFlags="NoFlag">
+          <editWidget type="ValueMap">
+            <config>
+              <Option type="Map">
+                <Option name="map" type="List">
+                  <Option type="Map">
+                    <Option name="1" value="1" type="QString"/>
+                  </Option>
+                  <Option type="Map">
+                    <Option name="2" value="2" type="QString"/>
+                  </Option>
+                  <Option type="Map">
+                    <Option name="3" value="3" type="QString"/>
+                  </Option>
+                  <Option type="Map">
+                    <Option name="4" value="4" type="QString"/>
+                  </Option>
+                  <Option type="Map">
+                    <Option name="5" value="5" type="QString"/>
+                  </Option>
+                </Option>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Fair_Value_Valuation" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Useful_Life" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Remaining_Useful_Life" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Residual_Value" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Depreciation_Method_Rate" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Depreciation_Expense" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Accumulated_Depreciation" configurationFlags="NoFlag">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="AASB13_Input_Level" configurationFlags="NoFlag">
+          <editWidget type="ValueMap">
+            <config>
+              <Option type="Map">
+                <Option name="map" type="List">
+                  <Option type="Map">
+                    <Option name="1" value="1" type="QString"/>
+                  </Option>
+                  <Option type="Map">
+                    <Option name="2" value="2" type="QString"/>
+                  </Option>
+                  <Option type="Map">
+                    <Option name="3" value="3" type="QString"/>
+                  </Option>
+                </Option>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Depreciation_Method" configurationFlags="NoFlag">
+          <editWidget type="ValueMap">
+            <config>
+              <Option type="Map">
+                <Option name="map" type="List">
+                  <Option type="Map">
+                    <Option name="Straight Line" value="Straight Line" type="QString"/>
+                  </Option>
+                  <Option type="Map">
+                    <Option name="Diminishing Value" value="Diminishing Value" type="QString"/>
+                  </Option>
+                </Option>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Date_of_Inspection" configurationFlags="NoFlag">
+          <editWidget type="DateTime">
+            <config>
+              <Option type="Map">
+                <Option name="calendar_popup" value="true" type="bool"/>
+                <Option name="display_format" value="yyyy-MM-dd" type="QString"/>
+                <Option name="field_format" value="yyyy-MM-dd" type="QString"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Photo_1" configurationFlags="NoFlag">
+          <editWidget type="ExternalResource">
+            <config>
+              <Option type="Map">
+                <Option name="DocumentViewer" value="0" type="int"/>
+                <Option name="FileWidget" value="true" type="bool"/>
+                <Option name="FileWidgetButton" value="true" type="bool"/>
+                <Option name="FileWidgetFilter" value="Images (*.jpg *.jpeg *.png *.tif *.tiff)" type="QString"/>
+                <Option name="RelativeStorage" value="1" type="int"/>
+                <Option name="StorageMode" value="0" type="int"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Photo_2" configurationFlags="NoFlag">
+          <editWidget type="ExternalResource">
+            <config>
+              <Option type="Map">
+                <Option name="DocumentViewer" value="0" type="int"/>
+                <Option name="FileWidget" value="true" type="bool"/>
+                <Option name="FileWidgetButton" value="true" type="bool"/>
+                <Option name="FileWidgetFilter" value="Images (*.jpg *.jpeg *.png *.tif *.tiff)" type="QString"/>
+                <Option name="RelativeStorage" value="1" type="int"/>
+                <Option name="StorageMode" value="0" type="int"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Photo_3" configurationFlags="NoFlag">
+          <editWidget type="ExternalResource">
+            <config>
+              <Option type="Map">
+                <Option name="DocumentViewer" value="0" type="int"/>
+                <Option name="FileWidget" value="true" type="bool"/>
+                <Option name="FileWidgetButton" value="true" type="bool"/>
+                <Option name="FileWidgetFilter" value="Images (*.jpg *.jpeg *.png *.tif *.tiff)" type="QString"/>
+                <Option name="RelativeStorage" value="1" type="int"/>
+                <Option name="StorageMode" value="0" type="int"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias name="" index="0" field="fid"/>
+        <alias name="Parent Unit ID" index="1" field="Parent_Unit_ID"/>
+        <alias name="Unit ID *" index="2" field="Unit_ID"/>
+        <alias name="Child Unit ID (select parent)" index="3" field="Child_Unit_ID"/>
+        <alias name="Location Description" index="4" field="Location_Description"/>
+        <alias name="Location Area" index="5" field="Location_Area"/>
+        <alias name="Material" index="6" field="Material"/>
+        <alias name="Asset Type" index="7" field="Asset_Type"/>
+        <alias name="Length (m)" index="8" field="Length_m"/>
+        <alias name="Construction Year" index="9" field="Construction_Year"/>
+        <alias name="Replacement Cost ($)" index="10" field="Replacement_Cost"/>
+        <alias name="Condition Rating (1–5)" index="11" field="Condition_Rating"/>
+        <alias name="Fair Value Valuation ($)" index="12" field="Fair_Value_Valuation"/>
+        <alias name="Useful Life (years)" index="13" field="Useful_Life"/>
+        <alias name="Remaining Useful Life (years)" index="14" field="Remaining_Useful_Life"/>
+        <alias name="Residual Value ($)" index="15" field="Residual_Value"/>
+        <alias name="Depreciation Method Rate" index="16" field="Depreciation_Method_Rate"/>
+        <alias name="Depreciation Expense ($)" index="17" field="Depreciation_Expense"/>
+        <alias name="Accumulated Depreciation ($)" index="18" field="Accumulated_Depreciation"/>
+        <alias name="AASB13 Input Level (1–3)" index="19" field="AASB13_Input_Level"/>
+        <alias name="Depreciation Method" index="20" field="Depreciation_Method"/>
+        <alias name="Date of Inspection" index="21" field="Date_of_Inspection"/>
+        <alias name="Photo 1" index="22" field="Photo_1"/>
+        <alias name="Photo 2" index="23" field="Photo_2"/>
+        <alias name="Photo 3" index="24" field="Photo_3"/>
+      </aliases>
+      <defaults>
+        <default expression="" applyOnUpdate="0" field="fid"/>
+        <default expression="current_parent_value('Unit_ID')" applyOnUpdate="0" field="Parent_Unit_ID"/>
+        <default expression="concat(current_parent_value('Unit_ID'), '_C', format_date(now(), 'yyMMddHHmm'))" applyOnUpdate="0" field="Unit_ID"/>
+        <default expression="current_parent_value('Unit_ID')" applyOnUpdate="0" field="Child_Unit_ID"/>
+        <default expression="current_parent_value('Location_Description')" applyOnUpdate="0" field="Location_Description"/>
+        <default expression="current_parent_value('Location_Area')" applyOnUpdate="0" field="Location_Area"/>
+        <default expression="current_parent_value('Material')" applyOnUpdate="0" field="Material"/>
+        <default expression="current_parent_value('Asset_Type')" applyOnUpdate="0" field="Asset_Type"/>
+        <default expression="" applyOnUpdate="0" field="Length_m"/>
+        <default expression="" applyOnUpdate="0" field="Construction_Year"/>
+        <default expression="" applyOnUpdate="0" field="Replacement_Cost"/>
+        <default expression="" applyOnUpdate="0" field="Condition_Rating"/>
+        <default expression="" applyOnUpdate="0" field="Fair_Value_Valuation"/>
+        <default expression="" applyOnUpdate="0" field="Useful_Life"/>
+        <default expression="" applyOnUpdate="0" field="Remaining_Useful_Life"/>
+        <default expression="" applyOnUpdate="0" field="Residual_Value"/>
+        <default expression="" applyOnUpdate="0" field="Depreciation_Method_Rate"/>
+        <default expression="" applyOnUpdate="0" field="Depreciation_Expense"/>
+        <default expression="" applyOnUpdate="0" field="Accumulated_Depreciation"/>
+        <default expression="" applyOnUpdate="0" field="AASB13_Input_Level"/>
+        <default expression="" applyOnUpdate="0" field="Depreciation_Method"/>
+        <default expression="to_date(now())" applyOnUpdate="0" field="Date_of_Inspection"/>
+        <default expression="" applyOnUpdate="0" field="Photo_1"/>
+        <default expression="" applyOnUpdate="0" field="Photo_2"/>
+        <default expression="" applyOnUpdate="0" field="Photo_3"/>
+      </defaults>
+      <constraints>
+        <constraint constraints="3" unique_strength="1" exp_strength="0" notnull_strength="1" field="fid"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Parent_Unit_ID"/>
+        <constraint constraints="1" unique_strength="0" exp_strength="0" notnull_strength="1" field="Unit_ID"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Child_Unit_ID"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Location_Description"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Location_Area"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Material"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Asset_Type"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Length_m"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Construction_Year"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Replacement_Cost"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Condition_Rating"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Fair_Value_Valuation"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Useful_Life"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Remaining_Useful_Life"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Residual_Value"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Depreciation_Method_Rate"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Depreciation_Expense"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Accumulated_Depreciation"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="AASB13_Input_Level"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Depreciation_Method"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Date_of_Inspection"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Photo_1"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Photo_2"/>
+        <constraint constraints="0" unique_strength="0" exp_strength="0" notnull_strength="0" field="Photo_3"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint desc="" exp="" field="fid"/>
+        <constraint desc="" exp="" field="Parent_Unit_ID"/>
+        <constraint desc="" exp="" field="Unit_ID"/>
+        <constraint desc="" exp="" field="Child_Unit_ID"/>
+        <constraint desc="" exp="" field="Location_Description"/>
+        <constraint desc="" exp="" field="Location_Area"/>
+        <constraint desc="" exp="" field="Material"/>
+        <constraint desc="" exp="" field="Asset_Type"/>
+        <constraint desc="" exp="" field="Length_m"/>
+        <constraint desc="" exp="" field="Construction_Year"/>
+        <constraint desc="" exp="" field="Replacement_Cost"/>
+        <constraint desc="" exp="" field="Condition_Rating"/>
+        <constraint desc="" exp="" field="Fair_Value_Valuation"/>
+        <constraint desc="" exp="" field="Useful_Life"/>
+        <constraint desc="" exp="" field="Remaining_Useful_Life"/>
+        <constraint desc="" exp="" field="Residual_Value"/>
+        <constraint desc="" exp="" field="Depreciation_Method_Rate"/>
+        <constraint desc="" exp="" field="Depreciation_Expense"/>
+        <constraint desc="" exp="" field="Accumulated_Depreciation"/>
+        <constraint desc="" exp="" field="AASB13_Input_Level"/>
+        <constraint desc="" exp="" field="Depreciation_Method"/>
+        <constraint desc="" exp="" field="Date_of_Inspection"/>
+        <constraint desc="" exp="" field="Photo_1"/>
+        <constraint desc="" exp="" field="Photo_2"/>
+        <constraint desc="" exp="" field="Photo_3"/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+      </attributeactions>
+      <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+        <columns/>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <storedexpressions/>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
+      <reuseLastValue/>
+      <dataDefinedFieldProperties/>
+      <widgets/>
+      <previewExpression></previewExpression>
+      <mapTip enabled="1"></mapTip>
+    </maplayer>
+  </projectlayers>
+  <layerorder>
+    <layer id="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523"/>
+  </layerorder>
+  <labelEngineSettings/>
+  <properties>
+    <Digitizing>
+      <AvoidIntersectionsMode type="int">0</AvoidIntersectionsMode>
+    </Digitizing>
+    <Gui>
+      <CanvasColorBluePart type="int">255</CanvasColorBluePart>
+      <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
+      <CanvasColorRedPart type="int">255</CanvasColorRedPart>
+      <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
+      <SelectionColorBluePart type="int">0</SelectionColorBluePart>
+      <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
+      <SelectionColorRedPart type="int">255</SelectionColorRedPart>
+    </Gui>
+    <Legend>
+      <filterByMap type="bool">false</filterByMap>
+    </Legend>
+    <Measure>
+      <Ellipsoid type="QString">EPSG:7019</Ellipsoid>
+    </Measure>
+    <Measurement>
+      <AreaUnits type="QString">m2</AreaUnits>
+      <DistanceUnits type="QString">meters</DistanceUnits>
+      <ScaleMethod type="QString">HorizontalMiddle</ScaleMethod>
+    </Measurement>
+    <PAL>
+      <CandidatesLinePerCM type="double">5</CandidatesLinePerCM>
+      <CandidatesPolygonPerCM type="double">2.5</CandidatesPolygonPerCM>
+      <DrawLabelMetrics type="bool">false</DrawLabelMetrics>
+      <DrawRectOnly type="bool">false</DrawRectOnly>
+      <DrawUnplaced type="bool">false</DrawUnplaced>
+      <PlacementEngineVersion type="int">1</PlacementEngineVersion>
+      <SearchMethod type="int">0</SearchMethod>
+      <ShowingAllLabels type="bool">false</ShowingAllLabels>
+      <ShowingCandidates type="bool">false</ShowingCandidates>
+      <ShowingPartialsLabels type="bool">true</ShowingPartialsLabels>
+      <TextFormat type="int">0</TextFormat>
+      <UnplacedColor type="QString">255,0,0,255,rgb:1,0,0,1</UnplacedColor>
+    </PAL>
+    <Paths>
+      <Absolute type="bool">false</Absolute>
+    </Paths>
+    <PositionPrecision>
+      <Automatic type="bool">true</Automatic>
+      <DecimalPlaces type="int">2</DecimalPlaces>
+    </PositionPrecision>
+    <SpatialRefSys>
+      <ProjectionsEnabled type="int">1</ProjectionsEnabled>
+    </SpatialRefSys>
+  </properties>
+  <dataDefinedServerProperties>
+    <Option type="Map">
+      <Option name="name" value="" type="QString"/>
+      <Option name="properties"/>
+      <Option name="type" value="collection" type="QString"/>
+    </Option>
+  </dataDefinedServerProperties>
+  <visibility-presets/>
+  <transformContext>
+    <srcDest allowFallback="1" coordinateOp="+proj=pipeline +step +inv +proj=webmerc +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +step +proj=utm +zone=54 +south +ellps=GRS80">
+      <src>
+        <spatialrefsys nativeFormat="Wkt">
+          <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Web mapping and visualisation."],AREA["World between 85.06°S and 85.06°N."],BBOX[-85.06,-180,85.06,180]],ID["EPSG",3857]]</wkt>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo-Mercator</description>
+          <projectionacronym>merc</projectionacronym>
+          <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </src>
+      <dest>
+        <spatialrefsys nativeFormat="Wkt">
+          <wkt>PROJCRS["GDA2020 / MGA zone 54",BASEGEOGCRS["GDA2020",DATUM["Geocentric Datum of Australia 2020",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",7844]],CONVERSION["Map Grid of Australia zone 54",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",141,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["Australia - onshore and offshore between 138°E and 144°E."],BBOX[-48.19,138,-9.08,144.01]],ID["EPSG",7854]]</wkt>
+          <proj4>+proj=utm +zone=54 +south +ellps=GRS80 +units=m +no_defs</proj4>
+          <srsid>29025</srsid>
+          <srid>7854</srid>
+          <authid>EPSG:7854</authid>
+          <description>GDA2020 / MGA zone 54</description>
+          <projectionacronym>utm</projectionacronym>
+          <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </dest>
+    </srcDest>
+  </transformContext>
+  <projectMetadata>
+    <identifier></identifier>
+    <parentidentifier></parentidentifier>
+    <language></language>
+    <type></type>
+    <title></title>
+    <abstract></abstract>
+    <links/>
+    <dates>
+      <date value="2026-05-22T18:30:51" type="Created"/>
+    </dates>
+    <author>Damian Ferguson</author>
+    <creation>2026-05-22T18:30:51</creation>
+  </projectMetadata>
+  <Annotations/>
+  <Layouts/>
+  <mapViewDocks3D/>
+  <Bookmarks/>
+  <Sensors/>
+  <ProjectViewSettings UseProjectScales="0" rotation="0">
+    <Scales/>
+  </ProjectViewSettings>
+  <ProjectStyleSettings projectStyleId="attachment:///lQsaXG_styles.db" colorModel="Rgb" iccProfileId="attachment:///QGIS3-VfENfe" RandomizeDefaultSymbolColor="1" DefaultSymbolOpacity="1">
+    <databases/>
+  </ProjectStyleSettings>
+  <ProjectTimeSettings totalMovieFrames="100" frameRate="1" timeStepUnit="h" timeStep="1" cumulativeTemporalRange="0"/>
+  <ElevationProperties FilterInvertSlider="0">
+    <terrainProvider type="flat">
+      <TerrainProvider scale="1" offset="0"/>
+    </terrainProvider>
+  </ElevationProperties>
+  <ProjectDisplaySettings CoordinateAxisOrder="Default" CoordinateType="MapCrs">
+    <BearingFormat id="bearing">
+      <Option type="Map">
+        <Option name="decimal_separator" type="invalid"/>
+        <Option name="decimals" value="6" type="int"/>
+        <Option name="direction_format" value="0" type="int"/>
+        <Option name="rounding_type" value="0" type="int"/>
+        <Option name="show_plus" value="false" type="bool"/>
+        <Option name="show_thousand_separator" value="true" type="bool"/>
+        <Option name="show_trailing_zeros" value="false" type="bool"/>
+        <Option name="thousand_separator" type="invalid"/>
+      </Option>
+    </BearingFormat>
+    <GeographicCoordinateFormat id="geographiccoordinate">
+      <Option type="Map">
+        <Option name="angle_format" value="DecimalDegrees" type="QString"/>
+        <Option name="decimal_separator" type="invalid"/>
+        <Option name="decimals" value="6" type="int"/>
+        <Option name="rounding_type" value="0" type="int"/>
+        <Option name="show_leading_degree_zeros" value="false" type="bool"/>
+        <Option name="show_leading_zeros" value="false" type="bool"/>
+        <Option name="show_plus" value="false" type="bool"/>
+        <Option name="show_suffix" value="false" type="bool"/>
+        <Option name="show_thousand_separator" value="true" type="bool"/>
+        <Option name="show_trailing_zeros" value="false" type="bool"/>
+        <Option name="thousand_separator" type="invalid"/>
+      </Option>
+    </GeographicCoordinateFormat>
+    <CoordinateCustomCrs>
+      <spatialrefsys nativeFormat="Wkt">
+        <wkt>GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]</wkt>
+        <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+        <srsid>3452</srsid>
+        <srid>4326</srid>
+        <authid>EPSG:4326</authid>
+        <description>WGS 84</description>
+        <projectionacronym>longlat</projectionacronym>
+        <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+        <geographicflag>true</geographicflag>
+      </spatialrefsys>
+    </CoordinateCustomCrs>
+  </ProjectDisplaySettings>
+  <ProjectGpsSettings destinationLayerProvider="ogr" autoAddTrackVertices="0" destinationLayer="Riverwall_Assets_1204378c_ebe3_4cf2_b9e0_17bc07340523" autoCommitFeatures="0" destinationLayerName="Riverwall_Assets" destinationFollowsActiveLayer="1" destinationLayerSource="C:\Users\Damia\Documents\Projects\coastal-asset-register\V2 (Final)\riverwall_assets_v2.gpkg|layername=Riverwall_Assets">
+    <timeStampFields/>
+  </ProjectGpsSettings>
+</qgis>
