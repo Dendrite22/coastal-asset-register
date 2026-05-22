@@ -146,7 +146,13 @@ _GDA2020_MGA50_WKT = (
 
 drv = ogr.GetDriverByName("GPKG")
 if os.path.exists(OUT_GPKG):
-    drv.DeleteDataSource(OUT_GPKG)
+    try:
+        os.remove(OUT_GPKG)
+    except PermissionError:
+        raise RuntimeError(
+            f"Cannot overwrite {OUT_GPKG}\n"
+            "Close it in QGIS first: right-click the layer → Remove Layer, then re-run."
+        )
 
 ds_out  = drv.CreateDataSource(OUT_GPKG)
 srs_out = osr.SpatialReference()
